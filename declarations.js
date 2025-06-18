@@ -1,4 +1,4 @@
-const str = "`\\/\"'";
+const str = '`\\/\"\''
 const arr = [4, "2"];
 Object.freeze(arr);
 const obj = { str: "hello", num: 500, bool: true, undef: undefined };
