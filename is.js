@@ -3,7 +3,7 @@ is.num = (nb) => typeof nb === "number";
 is.nan = (nb) => Number.isNaN(nb);
 is.str = (str) => typeof str === "string";
 is.bool = (nb) => typeof nb === "boolean";
-is.undef = (undef) => typeof nb === "undefind";
+is.undef = (undef) => typeof undef === "undefind";
 is.def = (def) => typeof def != "undefind";
 is.arr = (arr) => Array.isArray(arr);
 is.obj = (obj) => typeof obj === "object" || obj != null || !Array.isArray(obj);
