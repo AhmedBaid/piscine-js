@@ -15,6 +15,6 @@ function dogYears(planet, age) {
   } else if (planet == "uranus") {
     return Number((dogAge / 84.016846).toFixed(2));
   } else if (planet == "neptune") {
-    return Number((dogAge / 84.016846).toFixed(2));
+    return Number((dogAge / 164.79132).toFixed(2));
   }
 }
