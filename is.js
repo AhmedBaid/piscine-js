@@ -1,0 +1,12 @@
+const is = {};
+is.num = (nb) => typeof nb === "number";
+is.nan = (nb) => Number.isNaN(nb);
+is.str = (str) => typeof str === "string";
+is.bool = (nb) => typeof nb === "boolean";
+is.undef = (undef) => typeof nb === "undefind";
+is.def = (def) => typeof def != "undefind";
+is.arr = (arr) => Array.isArray(arr);
+is.obj = (obj) => typeof obj === "object" || obj != null || !Array.isArray(obj);
+is.fun = (func) => typeof func === "function";
+is.truthy = (something) => !!something;
+is.falsy = (something) => !something;
