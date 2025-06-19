@@ -13,7 +13,7 @@ const strToSet = (str) => {
 const mapToObj = (map) => Object.fromEntries(map);
 const objToArr = (obj) => Object.values(obj);
 const objToMap = (obj) => new Map(Object.entries(obj));
-const arrToObj = (arr) => Object.fromEntries(arr);
+const arrToObj = (arr) => Object.assign({},arr)
 const strToObj = (str) => {
   let object = {};
   const arrays = Object.entries(str);
@@ -24,7 +24,6 @@ const strToObj = (str) => {
 };
 const cars = ["Saab", "Volvo", "BMW"];
 const objj = { 0: "a", 1: "b", 2: "c" };
-console.log(strToObj("objj"));
 const superTypeOf = (type) => {
   if (type instanceof Map) {
     return "Map";
@@ -42,3 +41,5 @@ const superTypeOf = (type) => {
     return "undefined";
   }
 };
+const ctx ={}
+console.log(arrToObj([1, ctx,'pouet']));
