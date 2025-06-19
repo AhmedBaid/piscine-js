@@ -22,8 +22,6 @@ const strToObj = (str) => {
   }
   return object;
 };
-const cars = ["Saab", "Volvo", "BMW"];
-const objj = { 0: "a", 1: "b", 2: "c" };
 const superTypeOf = (type) => {
   if (type instanceof Map) {
     return "Map";
@@ -41,5 +39,3 @@ const superTypeOf = (type) => {
     return "undefined";
   }
 };
-const ctx ={}
-console.log(arrToObj([1, ctx,'pouet']));
