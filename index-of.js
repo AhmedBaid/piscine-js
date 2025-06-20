@@ -32,7 +32,7 @@ const lastIndexOf = (arr, value, optIndex) => {
         if (optIndex > arr.length) {
             return -1
         } else if (optIndex >= 0 && optIndex < arr.length) {
-            for (let j = arr.length - 1; j >= optIndex; j--) {
+            for (let j = optIndex; j >= 0; j--) {
                 if (value == arr[j]) {
                     return j
                 }
@@ -41,6 +41,9 @@ const lastIndexOf = (arr, value, optIndex) => {
         }
     }
 }
+const t={}
+console.log(lastIndexOf([t, 0, 0, t], t, 2));
+
 const includes = (arr, value) => {
     if (indexOf(arr, value) == -1) {
         return false
