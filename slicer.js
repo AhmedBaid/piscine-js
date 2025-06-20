@@ -16,5 +16,6 @@ const slice = (strORarr, start, end) => {
             arr.push(strORarr[i])
         }
     }
-    return typeof strORarr === "string" ? strORarr.join("") : strORarr
+    return typeof strORarr === "string" ? arr.join("") : strORarr
 }
+console.log(slice('abcdef', -3, -1));
