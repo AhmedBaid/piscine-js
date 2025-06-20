@@ -18,5 +18,5 @@ const slice = (strORarr, start, end) => {
             arr.push(strORarr[i])
         }
     }
-    return typeof strORarr === "string" ? arr.join("") : strORarr
+    return typeof strORarr === "string" ? arr.join("") : arr
 }
