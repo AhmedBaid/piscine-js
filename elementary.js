@@ -46,5 +46,5 @@ function modulo(a, b) {
         b = -b
     }
     const mod = a - multiply(divide(a, b), b)
-    return mod * sign
+    return multiply(mod,sign)
 }
