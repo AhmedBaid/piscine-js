@@ -8,8 +8,10 @@ const slice = (strORarr, start, end) => {
             arr.push(strORarr[i])
         }
     } else {
-        if (start < 0 || end < 0) {
+        if (start < 0) {
             start += strORarr.length
+        }
+        if (end < 0) {
             end += strORarr.length
         }
         for (let i = start; i < end; i++) {
@@ -18,4 +20,4 @@ const slice = (strORarr, start, end) => {
     }
     return typeof strORarr === "string" ? arr.join("") : strORarr
 }
-console.log(slice('abcdef', -3, -1));
+console.log(slice('abcdef', 0, -2));
