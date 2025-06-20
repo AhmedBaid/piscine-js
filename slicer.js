@@ -20,4 +20,3 @@ const slice = (strORarr, start, end) => {
     }
     return typeof strORarr === "string" ? arr.join("") : strORarr
 }
-console.log(slice('abcdef', 0, -2));
