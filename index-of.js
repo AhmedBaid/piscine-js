@@ -49,3 +49,5 @@ const includes = (arr, value) => {
     }
     return true
 }
+let t ={}
+console.log(lastIndexOf([t,0,t,88],t));
