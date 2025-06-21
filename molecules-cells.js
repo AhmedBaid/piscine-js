@@ -34,4 +34,3 @@ const DNA = (str) => {
   }
   return res;
 };
-console.log(RNA("TAGC"));
