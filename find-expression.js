@@ -1,5 +1,4 @@
-const add4 = "+4";
-const mul2 = "*2";
+const iseven = (nb) => nb % 2 === 0;
 const findExpression = (nb) => {
   let str = "1";
   let val = 1;
@@ -34,5 +33,3 @@ const findExpression = (nb) => {
   }
   return str;
 };
-const iseven = (nb) => nb % 2 === 0;
-console.log(findExpression(8));
