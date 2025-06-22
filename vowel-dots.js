@@ -1,4 +1,4 @@
-let vowels = /a|e|i|o|u|A|E|I|O|U/g;
+let vowels = /a|e|i|o|u|/gi;
 const vowelDots = (params) => {
   let str = "";
   for (let i = 0; i < params.length; i++) {
