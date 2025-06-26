@@ -16,10 +16,8 @@ const isLeapYear = (date) => {
   return false;
 };
 const isLastDayOfMonth = (date) => {
-  var d = new Date(date);
-  var lastDayOfMonth = new Date(d.getFullYear(), d.getMonth() + 1,0);
-  if (date == lastDayOfMonth) {
-    return true;
-  }
-  return false;
+  const d = new Date(date);
+  const lastDayOfMonth = new Date(d.getFullYear(), d.getMonth() + 1, 0);
+  return d.getDate() === lastDayOfMonth.getDate();
 };
+
