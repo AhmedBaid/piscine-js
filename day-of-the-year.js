@@ -4,8 +4,5 @@ const dayOfTheYear = (date) => {
   const diff = date - d;
   const oneDay = 1000 * 60 * 60 * 24;
   let res = Math.floor(diff / oneDay) + 1;
-  if (res == 367) {
-    return 1;
-  }
   return res;
 };
