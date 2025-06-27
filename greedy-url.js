@@ -1,5 +1,5 @@
 const getURL = (str) => {
-  let regex = /(https|http):\/\/\w+.[^\s]+/g;
+  let regex = /(https|http):\/\/\w+\.[^\s]+/g;
   return str.match(regex);
 };
 const greedyQuery = (str) => {
@@ -26,3 +26,16 @@ const notSoGreedy = (str) => {
   }
   return res;
 };
+
+
+// const fahrenheitToCelsius = (arr) => {
+//   let regex = /-?\d+/g;
+//   return arr.map((str) => {
+//     let arrregex = str.match(regex) || [];
+//     console.log(arrregex);
+    
+//     return  arrregex.map(
+//       (str) => Math.floor((Number(str) - 32) * (5 / 9)) + "°C"
+//     ).join("");
+//   });
+// };
