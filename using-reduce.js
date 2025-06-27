@@ -16,9 +16,7 @@ const sumOrMul = (arr, s = 0) => {
   return res;
 };
 
-const funcExec = (arrOFfunc,s) => {
-    let res = arrOFfunc.reduce((a,b)=>{
-        return a(b)
-    },s)
-    return res
+const funcExec = (arrOFfunc, s) => {
+  let res = arrOFfunc.reduce((a, b) => b(a), s);
+  return res;
 };
