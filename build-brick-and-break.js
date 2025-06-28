@@ -33,5 +33,5 @@ export const repair = (...ids) => {
 export const destroy = () => {
   let lastdiv = document.querySelectorAll("div");
   if (lastdiv.length == 0) return;
-  lastdiv[0].remove();
+  lastdiv[lastdiv.length-1].remove();
 };
