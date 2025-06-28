@@ -18,7 +18,8 @@ export const getActive = () => {
   let arr = [];
   let architects = document.querySelectorAll(".classical.active");
   let Nonarchitects = document.querySelectorAll(":not(.classical.active)");
-  arr.push(architects, Nonarchitects);
+  arr.push(architects);
+  arr.push(Nonarchitects);
   return arr;
 };
 export const getBonannoPisano = () => {
@@ -26,5 +27,6 @@ export const getBonannoPisano = () => {
   let architects = document.getElementById("#BonannoPisano");
   let Nonarchitects = document.querySelectorAll(".classical.active");
   arr.push(architects, Nonarchitects);
+  arr.push(Nonarchitects);
   return arr;
 };
