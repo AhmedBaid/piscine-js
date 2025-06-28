@@ -4,7 +4,7 @@ export const generateLetters = () => {
   for (let i = 1; i <= 120; i++) {
     let elem = document.createElement("div");
     body.appendChild(elem);
-    const randomLetter = String.fromCharCode(65 + Math.floor(Math.random() * 27));
+    const randomLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
     elem.textContent = randomLetter;
     elem.style.fontSize = font + "px";
     font++;
