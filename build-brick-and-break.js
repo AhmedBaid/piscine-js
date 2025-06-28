@@ -21,7 +21,7 @@ export const build = (nb) => {
 export const repair = (...ids) => {
   ids.forEach((id) => {
     let brick = document.getElementById(`${id}`);
-    if (brick == undefined) return;
+    if (!brick) return;
     if (brick.dataset.foundation == "true") {
       brick.dataset.repaired = "in progress";
     } else {
