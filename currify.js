@@ -3,7 +3,7 @@ const currify = (func) => {
     if (args.length >= func.length) {
       return func(...args);
     } else {
-      return (next) => curried(args, next);
+      return (next) => curried(...args, next);
     }
   };
   return curried;
