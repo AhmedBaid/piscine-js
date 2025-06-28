@@ -22,7 +22,9 @@ export const repair = (...ids) => {
   ids.forEach((id) => {
     let brick = document.getElementById(`${id}`);
     if (brick.dataset.foundation == "true") {
-      brick.dataset.foundation == "in progress";
+      brick.dataset.repaired = "in progress";
+    }else{
+      brick.dataset.repaired = "true";
     }
   });
 };
