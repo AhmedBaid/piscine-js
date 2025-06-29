@@ -4,13 +4,11 @@ let count = 0;
 let step = 1;
 
 export const pimp = () => {
-  let btn = document.querySelector("button");
-
-  if (count == 0 && step == 1) {
-    btn.classList.add("pimp");
-  }
-
+  const btn = document.querySelector("button");
+  console.log(btn.className);
+  
   if (step == 1) {
+    btn.classList.remove("unpimp");
     btn.classList.add(styles[count]);
   } else {
     btn.classList.remove(styles[count]);
@@ -24,10 +22,10 @@ export const pimp = () => {
     count = styles.length - 1;
   }
 
-  if (count == -1) {
+  if (count < 0) {
     btn.classList.remove("unpimp");
-    btn.classList.remove("pimp");
     step = 1;
     count = 0;
   }
 };
+
