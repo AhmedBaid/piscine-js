@@ -5,8 +5,8 @@ let step = 1;
 
 export const pimp = () => {
   const btn = document.querySelector("button");
-//   console.log(btn.className);
-  
+  //   console.log(btn.className);
+
   if (step == 1) {
     btn.classList.remove("unpimp");
     btn.classList.add(styles[count]);
@@ -28,4 +28,3 @@ export const pimp = () => {
     count = 0;
   }
 };
-
