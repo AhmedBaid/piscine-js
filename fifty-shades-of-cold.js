@@ -13,14 +13,28 @@ export const generateClasses = () => {
   head.appendChild(style);
 };
 export const generateColdShades = () => {
-  let body = document.querySelector("body");
+  const body = document.querySelector("body");
+
+  const colorbarida = [
+    "aqua",
+    "blue",
+    "turquoise",
+    "green",
+    "cyan",
+    "navy",
+    "purple",
+  ];
+
   colors.forEach((color) => {
-    let div = document.createElement("div");
-    div.setAttribute("class", color);
-    div.textContent = color;
-    body.appendChild(div);
+    if (colorbarida.some((cold) => color.toLowerCase().includes(cold))) {
+      const div = document.createElement("div");
+      div.className = color;
+      div.textContent = color;
+      body.appendChild(div);
+    }
   });
 };
+
 export const choseShade = (arg) => {
   let alldiv = document.querySelectorAll("div");
   alldiv.forEach((div) => {
