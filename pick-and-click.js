@@ -1,4 +1,3 @@
-
 export const pick = () => {
   let hsl = document.createElement("div");
   let hueee = document.createElement("div");
@@ -27,7 +26,7 @@ export const pick = () => {
     let hue = Math.round((e.clientX * 360) / width);
     let luminosity = Math.round((e.clientY * 100) / height);
     let combine = `hsl(${hue},50%,${luminosity}%)`;
-    body.style.background = combine;
+    body.style.backgroundColor = combine;
     hsl.textContent = combine;
     hueee.textContent = hue;
     luminosityy.textContent = luminosity;
