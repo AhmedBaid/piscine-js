@@ -36,12 +36,12 @@ export function moveCircle() {
     } else {
       let boxLeft = posbox.left;
       let boxTop = posbox.top;
-      let boxRight = posbox.right - 50;
-      let boxBottom = posbox.bottom - 50;
+      let boxRight = posbox.right - 52;
+      let boxBottom = posbox.bottom - 52;
       let circleLeft = Math.max(boxLeft, Math.min(e.clientX - 25, boxRight));
       let circleTop = Math.max(boxTop, Math.min(e.clientY - 25, boxBottom));
-      current.style.top = circleTop + "px";
-      current.style.left = circleLeft + "px";
+      current.style.top = circleTop + 1 + "px";
+      current.style.left = circleLeft + 1 + "px";
     }
   });
 }
