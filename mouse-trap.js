@@ -21,27 +21,28 @@ export function moveCircle() {
     current.style.left = `${X - 25}px`;
 
     let posbox = box.getBoundingClientRect();
-    let pos = current.getBoundingClientRect();
     const inside =
-      posbox.left < pos.left &&
-      posbox.right > pos.right &&
-      posbox.top < pos.top &&
-      posbox.bottom > pos.bottom;
-
-    if (!box.contains(current)) {
-      if (inside) {
-        current.style.background = "var(--purple)";
-        box.appendChild(current);
+      posbox.left < e.clientX - 25 &&
+      posbox.right > e.clientX + 25 &&
+      posbox.top < e.clientY - 25 &&
+      posbox.bottom > e.clientY + 25;
+    if (inside) {
+      current.style.background = "var(--purple)";
+      box.appendChild(current);
+    }
+    if (current.style.background == "var(--purple)") {
+      if (e.clientX < posbox.left + 25) {
+        current.style.left = posbox.left + "px";
       }
-    } else {
-      let boxLeft = posbox.left;
-      let boxTop = posbox.top;
-      let boxRight = posbox.right - 52;
-      let boxBottom = posbox.bottom - 52;
-      let circleLeft = Math.max(boxLeft, Math.min(e.clientX - 25, boxRight));
-      let circleTop = Math.max(boxTop, Math.min(e.clientY - 25, boxBottom));
-      current.style.top = circleTop + 1 + "px";
-      current.style.left = circleLeft + 1 + "px";
+      if (e.clientX > posbox.right - 25) {
+        current.style.left = posbox.right - 50 + "px";
+      }
+      if (e.clientY < posbox.top + 25) {
+        current.style.top = posbox.top + "px";
+      }
+      if (e.clientY > posbox.bottom - 25) {
+        current.style.top = posbox.bottom - 50 + "px";
+      }
     }
   });
 }
