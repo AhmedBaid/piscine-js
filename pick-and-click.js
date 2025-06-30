@@ -25,21 +25,22 @@ export const pick = () => {
     let Y = e.clientY;
     let hue = Math.round((e.clientX * 360) / width);
     let luminosity = Math.round((e.clientY * 100) / height);
-    let combine = `hsl(${hue},50%,${luminosity}%)`;    
-    body.style.backgroundColor = combine;
-    hsl.textContent = combine;
+    let hslValue = `hsl(${hue}, 50%, ${luminosity}%)`;
+    body.style.backgroundColor = hslValue;
+
+    hsl.textContent = hslValue;
     hueee.textContent = hue;
     luminosityy.textContent = luminosity;
 
-    axisX.setAttribute("x1", "0");
-    axisX.setAttribute("x2", width);
-    axisX.setAttribute("y1", Y);
-    axisX.setAttribute("y2", Y);
+    axisX.setAttribute("x1", X);
+    axisX.setAttribute("x2", X);
+    axisX.setAttribute("y1", 0);
+    axisX.setAttribute("y2", height);
 
-    axisY.setAttribute("x1", X);
-    axisY.setAttribute("x2", X);
-    axisY.setAttribute("y1", "0");
-    axisY.setAttribute("y2", height);
+    axisY.setAttribute("y1", Y);
+    axisY.setAttribute("y2", Y);
+    axisY.setAttribute("x1", 0);
+    axisY.setAttribute("x2", width);
   });
 
   document.addEventListener("click", () => {
