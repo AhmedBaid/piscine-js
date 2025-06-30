@@ -14,7 +14,7 @@ export function createCircle() {
 export function moveCircle() {
   document.addEventListener("mousemove", (e) => {
     let box = document.querySelector(".box");
-    if (!box) return;
+    if (!box || !current) return;
     let X = e.clientX;
     let Y = e.clientY;
     current.style.top = `${Y - 25}px`;
@@ -23,10 +23,10 @@ export function moveCircle() {
     let posbox = box.getBoundingClientRect();
     let pos = current.getBoundingClientRect();
     const inside =
-      posbox.left - 1 <= pos.left &&
-      posbox.right + 1 >= pos.right &&
-      posbox.top - 1 <= pos.top &&
-      posbox.bottom + 1 >= pos.bottom;
+      posbox.left <= pos.left &&
+      posbox.right >= pos.right &&
+      posbox.top <= pos.top &&
+      posbox.bottom >= pos.bottom;
 
     if (!box.contains(current)) {
       if (inside) {
