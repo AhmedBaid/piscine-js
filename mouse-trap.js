@@ -23,10 +23,10 @@ export function moveCircle() {
     let posbox = box.getBoundingClientRect();
     let pos = current.getBoundingClientRect();
     const inside =
-      posbox.left <= pos.left &&
-      posbox.right >= pos.right &&
-      posbox.top <= pos.top &&
-      posbox.bottom >= pos.bottom;
+      posbox.left - 1 <= pos.left &&
+      posbox.right - 1 >= pos.right &&
+      posbox.top - 1 <= pos.top &&
+      posbox.bottom - 1 >= pos.bottom;
 
     if (!box.contains(current)) {
       if (inside) {
