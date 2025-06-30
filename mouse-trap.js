@@ -1,3 +1,4 @@
+let current = null;
 export function createCircle() {
   document.addEventListener("click", (event) => {
     let circle = document.createElement("div");
@@ -6,34 +7,31 @@ export function createCircle() {
     circle.style.top = `${event.clientY - 25}px`;
     circle.style.left = `${event.clientX - 25}px`;
     document.body.appendChild(circle);
-    current= circle
+    current = circle;
   });
 }
 
 export function moveCircle() {
   document.addEventListener("mousemove", (e) => {
-    let circles = document.querySelectorAll(".circle");
     let box = document.querySelector(".box");
-    if (!box || circles.length === 0) return;
-    let current = circles[circles.length - 1]; 
+    if (!box) return;
     let X = e.clientX;
     let Y = e.clientY;
     current.style.top = `${Y - 25}px`;
     current.style.left = `${X - 25}px`;
 
     let posbox = box.getBoundingClientRect();
-
+    let pos = current.getBoundingClientRect();
     const inside =
-      posbox.left <= X - 25 &&
-      posbox.right >= X + 25 &&
-      posbox.top <= Y - 25 &&
-      posbox.bottom >= Y + 25;
+      posbox.left <= pos.left &&
+      posbox.right >= pos.right &&
+      posbox.top <= pos.top &&
+      posbox.bottom >= pos.bottom;
 
     if (!box.contains(current)) {
       if (inside) {
         current.style.background = "var(--purple)";
         box.appendChild(current);
-
       }
     } else {
       let boxLeft = posbox.left;
