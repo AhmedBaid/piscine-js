@@ -1,6 +1,7 @@
 const fusion = (...objects) => {
   let res = objects[0];
-  objects.forEach((obj) => {
+
+  objects.slice(1).forEach((obj) => {
     for (let key in obj) {
       if (obj.hasOwnProperty(key)) {
         if (Array.isArray(obj[key]) && Array.isArray(res[key])) {
@@ -17,7 +18,7 @@ const fusion = (...objects) => {
       }
     }
   });
+
   return res;
 };
-
-
+console.log(fusion({ arr: [1, "2"] }, { arr: [2] }));
