@@ -21,4 +21,3 @@ const fusion = (...objects) => {
 
   return res;
 };
-console.log(fusion({ arr: [1, "2"] }, { arr: [2] }));
