@@ -5,7 +5,6 @@ const fusion = (...objects) => {
     for (let key in objects[i]) {
       if (objects[i].hasOwnProperty(key)) {
         if (Array.isArray(objects[i][key]) && Array.isArray(res[key])) {
-          console.log(1);
           res[key] = res[key].concat(objects[i][key]);
         }else if(typeof res[key] == "string" && typeof objects[i][key] == "string"){
           res[key] = res[key].concat(" "+objects[i][key]);
