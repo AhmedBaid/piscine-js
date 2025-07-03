@@ -48,11 +48,11 @@ const lowCarbs = (obj) => {
 
 const cartTotal = (obj) => {
   let res = mapEntries(obj, ([key, value]) => {
-    let item = {}
-    for (let keyy in nutritionDB[key]){
-      item[keyy] = Number(((nutritionDB[key] * value) / 100).toFixed(1));
+    let item = {};
+    for (let keyy in nutritionDB[key]) {
+      item[keyy] = Number(((nutritionDB[key][keyy] * value) / 100).toFixed(3));
     }
-    return item
+    return [key, item]; 
   });
-  return  res;
+  return res;
 };
