@@ -18,17 +18,14 @@ const mapKeys = (obj, func) => {
 };
 
 const reduceKeys = (obj, func, init="") => {
-  let res = "";
-  if (init != undefined) {
-    res = init;
-  }
+
   for (const key in obj) {
-    if (res == "") {
-      res = key;
+    if (init === "") {
+      init = key;
     } else {
-      res = func(res, key);
+      init = func(init, key);
     }
   }
-  return res;
+  return init;
 };
 
