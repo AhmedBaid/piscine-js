@@ -17,7 +17,7 @@ const mapKeys = (obj, func) => {
   return res;
 };
 
-const reduceKeys = (obj, func, init) => {
+const reduceKeys = (obj, func, init="") => {
   let res = "";
   if (init != undefined) {
     res = init;
