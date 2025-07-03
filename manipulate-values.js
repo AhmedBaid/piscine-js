@@ -16,8 +16,11 @@ const mapValues = (obj, func) => {
   return res;
 };
 
-const reduceValues = (obj, func) => {
+const reduceValues = (obj, func,init) => {
   let res = 0;
+  if(init!=undefined){
+    res = init
+  }
   for (const key in obj) {
     res = func(res, obj[key]);
   }
