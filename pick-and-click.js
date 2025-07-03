@@ -25,7 +25,7 @@ export const pick = () => {
     let Y = e.clientY;
     let hue = Math.round((e.clientX * 360) / width);
     let luminosity = Math.round((e.clientY * 100) / height);
-    let hslValue = `hsl(${hue}, 50%, ${luminosity}%)`;
+    let hslValue = `hsl(${hue},50%,${luminosity}%)`;
     body.style.background = hslValue;
 
     hsl.textContent = hslValue;
