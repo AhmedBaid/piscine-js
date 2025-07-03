@@ -23,7 +23,11 @@ const reduceKeys = (obj, func, init) => {
     res = init;
   }
   for (const key in obj) {
-    res = func(res, key);
+    if (res == "") {
+      res = key;
+    } else {
+      res = func(res, key);
+    }
   }
   return res;
 };
