@@ -15,4 +15,3 @@ const replica = (...objects) => {
   });
   return res;
 };
-console.log(replica({ a: [1, 2, 4] }, { a: { b: [4] } }).a);
