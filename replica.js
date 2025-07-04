@@ -3,8 +3,8 @@ const replica = (...objects) => {
   objects.forEach((obj) => {
     for (let key in obj) {
       const value = obj[key];
-      if (typeof value === "object" && value !== null && !Array.isArray(value) && !(value instanceof RegExp) ) {
-        if (!res[key] || typeof res[key] !== "object") {
+      if (typeof value === "object" && value !== null && !Array.isArray(value) && !(value instanceof RegExp) ) {        
+        if (!res[key] || typeof res[key] !== "object"|| Array.isArray(res[key])) {
           res[key] = {};
         }
         res[key] = replica(res[key], value);
@@ -15,3 +15,4 @@ const replica = (...objects) => {
   });
   return res;
 };
+console.log(replica({ a: [1, 2, 4] }, { a: { b: [4] } }).a);
