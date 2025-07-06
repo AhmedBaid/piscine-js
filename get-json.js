@@ -3,7 +3,7 @@ const getJSON = async (path, params) => {
     let url = path
     if (params != undefined) {
         searchParams = new URLSearchParams(params).toString();
-        url = path + "?" + searchParams
+        url += "?" + searchParams
     }
     try {
         const response = await fetch(url);
