@@ -13,7 +13,7 @@ const pronoun = (str) => {
         res[arr[i].toLowerCase()] = { word: [], count: 0 };
       }
       res[arr[i].toLowerCase()].count++;
-      if (!pronoun.includes(arr[i + 1]) && i!= arr.length-1) {
+      if (!pronoun.includes(arr[i + 1]) && i != arr.length - 1) {
         let match = arr[i + 1].match(reg) || [];
         res[arr[i].toLowerCase()].word.push(...match);
       }
