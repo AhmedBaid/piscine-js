@@ -1,0 +1,3 @@
+const getJSON = (url,params)=>{
+    
+}

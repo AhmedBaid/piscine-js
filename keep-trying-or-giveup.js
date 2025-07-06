@@ -1,17 +1,16 @@
 const retry = (count, callback) => {
     let ctr = 0
-    let err
+    let dima = true
     return async function (...params) {
-        while (ctr <= count) {
+        while (dima) {
             try {
                 return await callback(...params)
             } catch (error) {
                 ctr++
-                err = error
+                if (ctr > count) {
+                    throw error;
+                }
             }
-        }
-        if (ctr >= count) {
-            throw err;
         }
     }
 }
