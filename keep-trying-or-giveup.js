@@ -20,7 +20,7 @@ const timeout = (delay, callback) => {
     return (...params) => {
         let reject = new Promise((_, reject) => {
             setTimeout(() => {
-                reject(new Error('timeout'))
+                reject(new Error("timeout"))
             }, delay)
         })
         return Promise.race([callback(...params), reject])
