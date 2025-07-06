@@ -21,8 +21,8 @@ const timeout = (delay, callback) => {
         let reject = new Promise((_, reject) => {
             setTimeout(() => {
                 reject(new Error('timeout'))
-            },delay)
-        })  
-        return Promise.race([callback(...params),reject])
+            }, delay)
+        })
+        return Promise.race([callback(...params), reject])
     }
 }
