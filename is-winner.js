@@ -16,7 +16,6 @@ const isWinner = async (country) => {
         let years = result.map((res) => {
             return res.year
         }).join(", ")
-
         let results = result.map((res) => {
             return res.score
         }).join(", ")

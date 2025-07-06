@@ -8,7 +8,7 @@ const getJSON = async (path, params) => {
     try {
         const response = await fetch(url);
         if (!response.ok) {
-            throw Error(`${response.statusText}`);
+            throw Error(response.statusText);
         }
         let json = await response.json();
         if (json.error) {
