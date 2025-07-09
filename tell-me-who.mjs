@@ -1,5 +1,5 @@
 import { readdir } from 'node:fs/promises';
-let directory = process.cwd()
+let directory = process.argv[2]
 let arr = await readdir(directory)
 console.log(arr);
 arr.sort()
