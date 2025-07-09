@@ -1,8 +1,8 @@
 import { readFile } from "fs/promises";
-const content = await readFile("verydisco-forever.txt", { encoding: 'utf8' })
-let arr = content.split(" ")
-console.log(arr);
+let fileName = process.argv[2];
 
+let content = await readFile(fileName, { encoding: 'utf8' })
+let arr = content.split(" ")
 
 let start
 let end
